@@ -26,7 +26,7 @@ const Login = () => {
                         <div>
                             <LoginGoogle />
                             <br />
-                            <LinkedInLogin />
+                            {/* <LinkedInLogin /> */}
                         </div>
                     </div>
                 </PlaneLayout>
