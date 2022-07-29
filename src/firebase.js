@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCeJT9H3bG7L7siER7hUKvYcSBakdwS-4k",
-  authDomain: "yaap-project-89f26.firebaseapp.com",
+  authDomain: "https://yaap-project-q8j75jqpa-kanishka-28.vercel.app/",
   projectId: "yaap-project-89f26",
   storageBucket: "yaap-project-89f26.appspot.com",
   messagingSenderId: "384058953643",
