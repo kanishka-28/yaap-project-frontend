@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import LoginFacebook from '../components/login/facebookLogin'
 import LoginGoogle from '../components/login/googleLogin'
 import LinkedInLogin from '../components/login/linkedinLogin'
+import LoginTwitter from '../components/login/twitterLogin'
 import { UserAuth } from '../context/auth/authContext'
 import PlaneLayout from '../layout/plane.layout'
 import Name from './Information/name'
@@ -23,13 +24,15 @@ const Login = () => {
         <>
             {user?.email ? <Name /> :
                 <PlaneLayout>
-                    <div className='md:mt-56 flex flex-col'>
-                        <h2 className='font-bold w-1/2 text-4xl'>Let’s begin by gathering up some useful information</h2>
+                    <div className='md:mt-52 flex flex-col sm:items-start px-4'>
+                        <h2 className='font-bold sm:w-1/2 text-4xl mb-16'>Let’s begin by gathering up some useful information</h2>
                         <div className='flex h-full items-center justify-center'>
                             <div>
                                 <LoginGoogle />
                                 <br />
                                 <LoginFacebook />
+                                <br/>
+                                <LoginTwitter/>
                                 {/* <LinkedInLogin /> */}
                             </div>
                         </div>

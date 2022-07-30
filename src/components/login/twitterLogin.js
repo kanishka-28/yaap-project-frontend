@@ -1,10 +1,7 @@
-import { GoogleLogin } from 'react-google-login';
-import { FcGoogle } from 'react-icons/fc'
-import { useHistory } from 'react-router-dom';
+import { AiFillTwitterCircle } from 'react-icons/ai'
 import { UserAuth } from '../../context/auth/authContext';
-// import { Googlebutton } from 'react-google-button'
 
-function LoginGoogle() {
+function LoginTwitter() {
 
     // const ResponseSuccessGoogle = async (response) => {
     //     console.log(response);
@@ -32,13 +29,13 @@ function LoginGoogle() {
                 </div>
             </div> */}
             <div onClick={ResponseSuccessGoogle} className='flex items-center cursor-pointer rounded-full shadow-lg'>
-                <FcGoogle size={'2rem'} className='ml-2 pt-0.5 bg-white text-blue-500  rounded-full' />
+                <AiFillTwitterCircle size={'2rem'} className='ml-2 pt-0 text-twitter'/>
                 <div className='px-2 w-44 text-center h-10 flex items-center cursor-pointer'>
-                    <p className=''>Sign in with Google</p>
+                    <p className=''>Sign in with Twitter</p>
                 </div>
             </div>
         </>
     )
 }
 
-export default LoginGoogle;
+export default LoginTwitter;

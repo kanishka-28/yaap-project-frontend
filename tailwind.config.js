@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         'linkedin': '#0e76a8',
         'facebook': '#4267B2',
+        'twitter': '#1DA1F2',
       }
     },
   },
