@@ -2,11 +2,10 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import LoginFacebook from '../components/login/facebookLogin'
 import LoginGoogle from '../components/login/googleLogin'
-import LinkedInLogin from '../components/login/linkedinLogin'
 import LoginTwitter from '../components/login/twitterLogin'
 import { UserAuth } from '../context/auth/authContext'
 import PlaneLayout from '../layout/plane.layout'
-import Name from './Information/name'
+import Name from './information/name'
 
 const Login = () => {
 
