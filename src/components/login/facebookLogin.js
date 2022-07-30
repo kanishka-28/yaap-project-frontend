@@ -1,20 +1,15 @@
-import { GoogleLogin } from 'react-google-login';
-import { FcGoogle } from 'react-icons/fc'
+import { ImFacebook } from 'react-icons/im'
 import { useHistory } from 'react-router-dom';
 import { UserAuth } from '../../context/auth/authContext';
-// import { Googlebutton } from 'react-google-button'
 
-function LoginGoogle() {
+function LoginFacebook() {
 
-    // const ResponseSuccessGoogle = async (response) => {
-    //     console.log(response);
-    // }
-   
-    const {googleSignIn} = UserAuth();
+    const {facebookSignIn} = UserAuth();
 
-    const ResponseSuccessGoogle = async (response) => {
+    const ResponseSuccessfacebook = async (response) => {
         try {
-            await googleSignIn()
+            await facebookSignIn()
+            console.log(response);
         } catch (error) {
             console.log(error);
         }
@@ -31,14 +26,14 @@ function LoginGoogle() {
                     />
                 </div>
             </div> */}
-            <div onClick={ResponseSuccessGoogle} className='flex items-center cursor-pointer rounded-full shadow-lg'>
-                <FcGoogle size={'2rem'} className='ml-2 pt-0.5 bg-white text-blue-500  rounded-full' />
+            <div onClick={ResponseSuccessfacebook} className='flex items-center cursor-pointer rounded-full shadow-lg'>
+                <ImFacebook size={'2rem'} className='ml-2 pt-0.5 bg-white text-blue-500 border-8 border-blue-500 rounded-full' />
                 <div className='px-2 w-44 text-center h-10 flex items-center cursor-pointer'>
-                    <p className=''>Sign in with Google</p>
+                    <p className=''>Sign in with facebook</p>
                 </div>
             </div>
         </>
     )
 }
 
-export default LoginGoogle;
+export default LoginFacebook;

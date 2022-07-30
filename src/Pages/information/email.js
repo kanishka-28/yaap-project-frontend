@@ -10,7 +10,7 @@ const Email = () => {
         <PlaneLayout>
             <form>
                 <div className='md:mt-56 flex flex-col m-3'>
-                    <h2 className='font-bold text-3xl'>What's is your Email?</h2>
+                    <h2 className='font-bold text-4xl'>What's is your Email?</h2>
                     <p className='text-xs mt-4 text-gray-600'>Please provide us with a valid email</p>
                     <div className='text-2xl h-12 border-gray-400 border-b-2 my-8 w-full'>
                         <input value={user?.email} className='outline-none text-gray-500' placeholder='e.g. John doe' />

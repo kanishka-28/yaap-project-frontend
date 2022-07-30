@@ -7,7 +7,7 @@ const Mobile = () => {
         <PlaneLayout>
             <form>
                 <div className='md:mt-56 flex flex-col m-3'>
-                    <h2 className='font-bold text-3xl'>What's is your mobile number?</h2>
+                    <h2 className='font-bold text-4xl'>What's is your mobile number?</h2>
                     <p className='text-xs mt-4 text-gray-600'>It’s optional but it’ll only help us serve you better</p>
                     <div className='text-2xl h-12 border-gray-400 border-b-2 my-8 w-full'>
                         <input required className='outline-none' placeholder='e.g. 9876543210' />

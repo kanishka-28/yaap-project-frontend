@@ -7,7 +7,7 @@ import yellowCircle from "../assets/images/yellowCircle.svg"
 
 const PlaneLayout = (props) => {
     return (
-        <div className='h-screen sm:flex gap-96'>
+        <div className='h-screen sm:flex gap-64'>
             <div className=''>
                 <Link to="/">
                     <img src={logoyaap} alt="home" className="relative ml-24 top-16" />

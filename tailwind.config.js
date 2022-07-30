@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'linkedin': '#0e76a8',
+        'facebook': '#4267B2',
       }
     },
   },

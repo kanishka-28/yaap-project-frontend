@@ -12,10 +12,10 @@ const Name = () => {
         <PlaneLayout>
             <form>
                 <div className='md:mt-56 flex flex-col m-3'>
-                    <h2 className='font-bold text-3xl'>What's is your name?</h2>
+                    <h2 className='font-bold text-4xl'>What's is your name?</h2>
                     <p className='text-xs mt-4 text-gray-600'>Please provide us with your real name</p>
                     <div className='text-2xl h-12 border-gray-400 border-b-2 my-8 w-full'>
-                        <input value={name} onChange={(e) => setname(e.target.value)} className='outline-none' placeholder='e.g. John doe' />
+                        <input required value={name} onChange={(e) => setname(e.target.value)} className='outline-none' placeholder='e.g. John doe' />
                     </div>
                     <div className='flex items-center gap-4'>
                         <Link to={'/info/email'}>
