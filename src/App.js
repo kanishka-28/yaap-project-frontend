@@ -8,7 +8,7 @@ import Thanks from "./Pages/information/thanks";
 import { AuthContextProvider } from "./context/auth/authContext";
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://yaapbackend.herokuapp.com';
 axios.defaults.params = {};
 
 
