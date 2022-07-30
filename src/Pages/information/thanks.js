@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import PlaneLayout from '../../layout/plane.layout'
 
 const Thanks = () => {
+
+    const history = useHistory();
+
+    useEffect(() => {
+      setTimeout(() => {
+        window.location.href = "https://spatial.io/s/Yaap-Main-Venue-62d717a487de560001106ab9";
+      }, 3000);      
+    }, []);
+    
+
     return (
         <PlaneLayout>
             <div className='md:mt-56 flex flex-col m-3'>
