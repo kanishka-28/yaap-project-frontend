@@ -1,16 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import axios from "axios"
 import Login from "./Pages/login";
 import Name from "./Pages/information/name";
 import Email from "./Pages/information/email";
 import Mobile from "./Pages/information/mobile";
 import Thanks from "./Pages/information/thanks";
 import { AuthContextProvider } from "./context/auth/authContext";
-
-//axios default settings
-axios.defaults.baseURL = 'https://boobook-1305.herokuapp.com/';
-axios.defaults.params = {};
 
 const App = () => {
   return ( 
