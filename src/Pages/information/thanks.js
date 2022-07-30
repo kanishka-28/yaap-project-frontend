@@ -7,8 +7,7 @@ const Thanks = () => {
       setTimeout(() => {
         window.location.href = "https://spatial.io/s/Yaap-Main-Venue-62d717a487de560001106ab9";
       }, 3000);      
-    }, []);
-    
+    }, []);    
 
     return (
         <PlaneLayout>
