@@ -24,9 +24,9 @@ const Name = () => {
                         <p className='text-xs text-gray-600'>Or press enter</p>
                     </div>
                     {/* <div className='flex items-center gap-4'>
-                    <button onClick={logout} className='px-5 py-1 rounded-full text-white bg-red-500'>logout</button>
-                    <p className='text-xs text-gray-600'>Or press enter</p>
-                </div> */}
+                        <button onClick={logout} className='px-5 py-1 rounded-full text-white bg-red-500'>logout</button>
+                        <p className='text-xs text-gray-600'>Or press enter</p>
+                    </div> */}
                     <div className='mt-32 flex gap-1'>
                         <div className='h-1 w-6 rounded-full bg-yellow-500'></div>
                         <div className='h-1 w-2 rounded-full bg-gray-400'></div>

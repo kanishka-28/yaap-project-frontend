@@ -1,8 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import PlaneLayout from '../../layout/plane.layout'
+import { UserAuth } from '../../context/auth/authContext';
+import { mailSender } from '../../services/api';
 
 const Mobile = () => {
+
+    const { user } = UserAuth();
+    const history = useHistory();
+
+    const email = user?.email;
+    const sendMail = (e) => {
+        e.preventDefault();
+        try {
+            console.log(user?.email);
+            Promise.resolve(mailSender(email)).then((res) => {
+                console.log(res);
+            }).then(()=>{
+                history.push('/info/thanks');
+            })
+        } catch (error) {
+            console.log({ error });
+        }
+    }
+
     return (
         <PlaneLayout>
             <form>
@@ -13,9 +34,7 @@ const Mobile = () => {
                         <input required className='outline-none' placeholder='e.g. 9876543210' />
                     </div>
                     <div className='flex items-center gap-4'>
-                        <Link to={'/info/thanks'}>
-                            <button type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
-                        </Link>
+                            <button onClick={sendMail} type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
                         <p className='text-xs text-gray-600'>Or press enter</p>
                     </div>
                     <div className='mt-32 flex gap-1'>

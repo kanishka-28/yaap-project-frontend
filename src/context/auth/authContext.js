@@ -1,5 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged, FacebookAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, FacebookAuthProvider, TwitterAuthProvider } from "firebase/auth";
 import { auth } from '../../firebase'
 
 const AuthContext = createContext();
@@ -13,6 +13,11 @@ export const AuthContextProvider = ({ children }) => {
 
   const facebookSignIn = () => {
     const provider = new FacebookAuthProvider();
+    signInWithPopup(auth, provider)
+  }
+
+  const twitterSignIn = () => {
+    const provider = new TwitterAuthProvider();
     signInWithPopup(auth, provider)
   }
 
@@ -32,7 +37,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ googleSignIn, logout, user, facebookSignIn}}>
+    <AuthContext.Provider value={{ googleSignIn, logout, user, facebookSignIn, twitterSignIn}}>
       {children}
     </AuthContext.Provider>
   )

@@ -2,16 +2,12 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 import { UserAuth } from '../../context/auth/authContext';
 
 function LoginTwitter() {
-
-    // const ResponseSuccessGoogle = async (response) => {
-    //     console.log(response);
-    // }
    
-    const {googleSignIn} = UserAuth();
+    const {twitterSignIn} = UserAuth();
 
-    const ResponseSuccessGoogle = async (response) => {
+    const ResponseSuccessTwitter = async (response) => {
         try {
-            await googleSignIn()
+            // await twitterSignIn()
         } catch (error) {
             console.log(error);
         }
@@ -28,7 +24,7 @@ function LoginTwitter() {
                     />
                 </div>
             </div> */}
-            <div onClick={ResponseSuccessGoogle} className='flex items-center cursor-pointer rounded-full shadow-lg'>
+            <div onClick={ResponseSuccessTwitter} className='flex items-center cursor-pointer rounded-full shadow-lg'>
                 <AiFillTwitterCircle size={'2rem'} className='ml-2 pt-0 text-twitter'/>
                 <div className='px-2 w-44 text-center h-10 flex items-center cursor-pointer'>
                     <p className=''>Sign in with Twitter</p>
