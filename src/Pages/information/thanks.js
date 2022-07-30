@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
 import PlaneLayout from '../../layout/plane.layout'
 
 const Thanks = () => {
-
-    const history = useHistory();
 
     useEffect(() => {
       setTimeout(() => {
