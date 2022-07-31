@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import PlaneLayout from '../../layout/plane.layout'
 import { UserAuth } from '../../context/auth/authContext';
 import { mailSender } from '../../services/api';
+import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 const Mobile = () => {
 
     const { user } = UserAuth();
+    const [mobile, setmobile] = useState('');
+    const [id, setid] = useState("");
     const history = useHistory();
 
     const email = user?.email;
@@ -16,7 +20,7 @@ const Mobile = () => {
             console.log(user?.email);
             Promise.resolve(mailSender(email)).then((res) => {
                 console.log(res);
-            }).then(()=>{
+            }).then(() => {
                 history.push('/info/thanks');
             })
         } catch (error) {
@@ -24,6 +28,39 @@ const Mobile = () => {
         }
     }
 
+    useEffect(() => {
+        const userCollectionRef = collection(db, 'users');
+        // piece of cake
+        getDocs(userCollectionRef).then((res) => {
+            const users = res.docs.map((doc) => (
+                {
+                    data: doc.data(),
+                    id: doc.id,
+                })
+            )
+            users.map((el) => {
+                if (el.data.email === user.email) {
+                    setmobile(el.data.mobile)
+                    setid(el.id);
+                }
+            })
+        }).catch((e) => {
+            console.log(e);
+        })
+    }, [])
+
+    const handleChange = async (e) => {
+        e.preventDefault();
+        setmobile(e.target.value);
+        const userDocRef = doc(db, "users", id)
+        updateDoc(userDocRef, {
+            mobile: e.target.value,
+        }).then((res) => {
+            console.log(res);
+        }).catch((e) => {
+            console.log(e);
+        })
+    }
     return (
         <PlaneLayout>
             <form>
@@ -31,10 +68,10 @@ const Mobile = () => {
                     <h2 className='font-bold text-4xl'>What's is your mobile number?</h2>
                     <p className='text-xs mt-4 text-gray-600'>It’s optional but it’ll only help us serve you better</p>
                     <div className='text-2xl h-12 border-gray-400 border-b-2 my-8 w-full'>
-                        <input required className='outline-none' placeholder='e.g. 9876543210' />
+                        <input value={mobile} type={'number'} onChange={handleChange} required className='w-full outline-none' placeholder='e.g. 9876543210' />
                     </div>
                     <div className='flex items-center gap-4'>
-                            <button onClick={sendMail} type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
+                        <button onClick={sendMail} type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
                         <p className='text-xs text-gray-600'>Or press enter</p>
                     </div>
                     <div className='mt-32 flex gap-1'>

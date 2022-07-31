@@ -5,7 +5,7 @@ import Name from "./Pages/information/name";
 import Email from "./Pages/information/email";
 import Mobile from "./Pages/information/mobile";
 import Thanks from "./Pages/information/thanks";
-import { AuthContextProvider } from "./context/auth/authContext";
+import { AuthContextProvider} from "./context/auth/authContext";
 import axios from "axios";
 
 axios.defaults.baseURL = 'https://yaapbackend.herokuapp.com';
@@ -13,7 +13,8 @@ axios.defaults.params = {};
 
 
 const App = () => {
-  return ( 
+
+  return (
     <Router>
       <AuthContextProvider>
         <div>
