@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { UserAuth } from '../../context/auth/authContext'
 import { db } from '../../firebase'
 import PlaneLayout from '../../layout/plane.layout'
-import { useCollection } from "react-firebase-hooks/firestore"
-import { getAuth } from 'firebase/auth'
 import { collection, doc, getDocs, updateDoc } from 'firebase/firestore'
 
 const Name = () => {
