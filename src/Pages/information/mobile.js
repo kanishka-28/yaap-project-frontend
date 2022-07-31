@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import PlaneLayout from '../../layout/plane.layout'
 import { UserAuth } from '../../context/auth/authContext';
 import { mailSender } from '../../services/api';
@@ -16,19 +16,17 @@ const Mobile = () => {
     const sendMail = (e) => {
         e.preventDefault();
         try {
-            Promise.resolve(mailSender(user?.email)).then((res) => {
+            Promise.resolve(mailSender(user?.email, user?.displayName)).then((res) => {
                 console.log(res);
-            }).then(() => {
-                history.push('/info/thanks');
             })
         } catch (error) {
             console.log({ error });
         }
+        history.push('/info/thanks');
     }
 
     useEffect(() => {
         const userCollectionRef = collection(db, 'users');
-        // piece of cake
         getDocs(userCollectionRef).then((res) => {
             const users = res?.docs?.map((doc) => (
                 {
