@@ -13,11 +13,9 @@ const Mobile = () => {
     const [id, setid] = useState("");
     const history = useHistory();
 
-    const email = user?.email;
     const sendMail = (e) => {
         e.preventDefault();
         try {
-            console.log(user?.email);
             Promise.resolve(mailSender(user?.email)).then((res) => {
                 console.log(res);
             }).then(() => {
@@ -63,7 +61,7 @@ const Mobile = () => {
     }
     return (
         <PlaneLayout>
-            <form>
+            <form onSubmit={sendMail}>
                 <div className='md:mt-56 flex flex-col m-3'>
                     <h2 className='font-bold text-4xl'>What's is your mobile number?</h2>
                     <p className='text-xs mt-4 text-gray-600'>It’s optional but it’ll only help us serve you better</p>
@@ -71,7 +69,7 @@ const Mobile = () => {
                         <input value={mobile} type={'number'} onChange={handleChange} required className='w-full outline-none' placeholder='e.g. 9876543210' />
                     </div>
                     <div className='flex items-center gap-4'>
-                        <button onClick={sendMail} type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
+                        <button type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>
                         <p className='text-xs text-gray-600'>Or press enter</p>
                     </div>
                     <div className='mt-32 flex gap-1'>
