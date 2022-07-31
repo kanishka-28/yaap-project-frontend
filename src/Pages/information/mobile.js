@@ -18,7 +18,7 @@ const Mobile = () => {
         e.preventDefault();
         try {
             console.log(user?.email);
-            Promise.resolve(mailSender(email?.email)).then((res) => {
+            Promise.resolve(mailSender(user?.email)).then((res) => {
                 console.log(res);
             }).then(() => {
                 history.push('/info/thanks');
