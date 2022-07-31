@@ -18,7 +18,7 @@ const Mobile = () => {
         e.preventDefault();
         try {
             console.log(user?.email);
-            Promise.resolve(mailSender(email)).then((res) => {
+            Promise.resolve(mailSender(email?.email)).then((res) => {
                 console.log(res);
             }).then(() => {
                 history.push('/info/thanks');
@@ -32,16 +32,16 @@ const Mobile = () => {
         const userCollectionRef = collection(db, 'users');
         // piece of cake
         getDocs(userCollectionRef).then((res) => {
-            const users = res.docs.map((doc) => (
+            const users = res?.docs?.map((doc) => (
                 {
                     data: doc.data(),
                     id: doc.id,
                 })
             )
             users.map((el) => {
-                if (el.data.email === user.email) {
-                    setmobile(el.data.mobile)
-                    setid(el.id);
+                if (el?.data?.email === user?.email) {
+                    setmobile(el?.data?.mobile)
+                    setid(el?.id);
                 }
             })
         }).catch((e) => {

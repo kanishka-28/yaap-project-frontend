@@ -15,7 +15,7 @@ const Name = () => {
         const userCollectionRef = collection(db, 'users');
         // piece of cake
         getDocs(userCollectionRef).then((res) => {
-            const users = res.docs.map((doc) => (
+            const users = res?.docs?.map((doc) => (
                 {
                     data: doc.data(),
                     id: doc.id,
@@ -23,9 +23,9 @@ const Name = () => {
             )
             console.log(users);
             users.map((el) => {
-                if (el.data.email === user.email) {
-                    setid(el.id);
-                    setname(el.data.name);
+                if (el?.data?.email === user?.email) {
+                    setid(el?.id);
+                    setname(el?.data?.name);
                 }
             })
         }).catch((e) => {
