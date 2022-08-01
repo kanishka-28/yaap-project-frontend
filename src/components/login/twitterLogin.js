@@ -7,7 +7,7 @@ function LoginTwitter() {
 
     const ResponseSuccessTwitter = async (response) => {
         try {
-            // await twitterSignIn()
+            await twitterSignIn()
         } catch (error) {
             console.log(error);
         }

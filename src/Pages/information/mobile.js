@@ -64,7 +64,7 @@ const Mobile = () => {
                     <h2 className='font-bold text-4xl'>What's is your mobile number?</h2>
                     <p className='text-xs mt-4 text-gray-600'>It’s optional but it’ll only help us serve you better</p>
                     <div className='text-2xl h-12 border-gray-400 border-b-2 my-8 w-full'>
-                        <input value={mobile} type={'number'} onChange={handleChange} required className='w-full outline-none' placeholder='e.g. 9876543210' />
+                        <input value={mobile} type={'number'} onChange={handleChange} className='w-full outline-none' placeholder='e.g. 9876543210' />
                     </div>
                     <div className='flex items-center gap-4'>
                         <button type='submit' className='px-5 py-1 rounded-full text-white bg-yellow-500'>Finish</button>

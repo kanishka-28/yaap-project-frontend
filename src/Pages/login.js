@@ -31,7 +31,7 @@ const Login = () => {
                                 <br />
                                 <LoginFacebook />
                                 <br/>
-                                <LoginTwitter/>
+                                {/* <LoginTwitter/> */}
                                 {/* <LinkedInLogin /> */}
                             </div>
                         </div>

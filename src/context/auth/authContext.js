@@ -38,14 +38,14 @@ export const AuthContextProvider = ({ children }) => {
       const userCollectionRef = collection(db, 'users');
       // piece of cake
       await getDocs(userCollectionRef).then((res) => {
-        const users = res.docs.map((doc) => (
+        const users = res?.docs?.map((doc) => (
           {
             data: doc.data(),
             id: doc.id,
           })
         )
         users.map((user) => {
-          if (user.data.email === currentUser.email) {
+          if (user?.data?.email === currentUser?.email) {
             value=true;
             return;
           }
